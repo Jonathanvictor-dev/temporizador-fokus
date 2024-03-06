@@ -80,6 +80,11 @@ descansoLongoBtn.addEventListener('click', () => {
 const contagemRegressiva = () => {
     if (tempoDecorridoEmSegundos <= 0) {
         audioTempoFinalizado.play();
+        const focoAtivo = html.getAttribute('data-contexto') == 'foco';
+        if (focoAtivo) { // Com a condição verdadeira, as outras aplicações do projeto podem ouvir e reagir ao evento.
+            const evento = new CustomEvent('focoFinalizado');
+            document.dispatchEvent(evento);
+        }
         zerar();
         return;
     };
