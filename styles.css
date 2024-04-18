@@ -549,9 +549,22 @@ h1, h2, h3, h4, h5, h6 {
 
 .app__form-edit-task {
     position: absolute;
-    bottom: -50%;
+    bottom: -60%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50rem;
+    width: 45rem;
     z-index: 10000;
+    background-color: #808080;
+}
+
+@media screen and (max-width: 440px) {
+    .app__form-edit-task {
+        width: 30rem;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .app__form-edit-task {
+        bottom: -90%;
+    }
 }

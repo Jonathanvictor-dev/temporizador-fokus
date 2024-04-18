@@ -53,6 +53,7 @@ function criarElementoTarefa (tarefa) {
         const btnCancelarEdicao = document.querySelector('.app__form-footer__button--cancel-edit');
         const btnSalvarEdicao = document.querySelector('.app__form-footer__button--confirm-edit');
 
+        textAreaDeEdicao.value = '';
         formularioDeEdicao.classList.remove('hidden');
 
         btnCancelarEdicao.addEventListener('click', () => {
