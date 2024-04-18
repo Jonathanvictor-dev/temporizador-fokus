@@ -100,7 +100,22 @@
                     </div>
                 </div>
                 <ul class="app__section-task-list"></ul>
-                <div id="app_form-edit-task"></div>
+                <form class="app__form-edit-task hidden">
+                    <label class="app__form-label-edit">
+                        Editar tarefa
+                    </label>
+                    <div class="app__form-field">
+                        <textarea required rows="4" class="app__form-textarea-edit" placeholder="O que deseja editar?"></textarea>
+                    </div>
+                    <footer class="app__form-footer">
+                        <button type="button" class="app__form-footer__button app__form-footer__button--cancel-edit">
+                            <img src="imagens/close.png" alt=""> Cancelar
+                        </button>
+                        <button class="app__form-footer__button app__form-footer__button--confirm-edit">
+                            <img src="imagens/save.png" alt=""> Salvar
+                        </button>
+                    </footer>
+                </form>
                 <form class="app__form-add-task hidden" aria-hidden="true">
                     <div class="app__form-field">
                         <label class="app__form-label">

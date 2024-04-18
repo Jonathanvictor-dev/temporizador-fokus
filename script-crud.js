@@ -34,7 +34,6 @@ function criarElementoTarefa (tarefa) {
         </svg>
         `
     svg.addEventListener('click', () => {
-        debugger
         li.classList.add('app__section-task-list-item-complete');
         botao.setAttribute('disabled', 'disabled');
         tarefa.completa = true;
@@ -48,15 +47,34 @@ function criarElementoTarefa (tarefa) {
     const botao = document.createElement('button');
     botao.classList.add('app_button-edit');
 
-    botao.onclick = () => {
-        // debugger
-        const novaDescricao = prompt('Qual é a nova tarefa?');
-        if (novaDescricao) {
-            paragrafo.textContent = novaDescricao;
-            tarefa.descricao = novaDescricao; 
-            atualizarTarefa();    
-        };
-    };
+    botao.addEventListener('click', () => {
+        const formularioDeEdicao = document.querySelector('.app__form-edit-task');
+        const textAreaDeEdicao = document.querySelector('.app__form-textarea-edit');
+        const btnCancelarEdicao = document.querySelector('.app__form-footer__button--cancel-edit');
+        const btnSalvarEdicao = document.querySelector('.app__form-footer__button--confirm-edit');
+
+        formularioDeEdicao.classList.remove('hidden');
+
+        btnCancelarEdicao.addEventListener('click', () => {
+            formularioDeEdicao.classList.add('hidden');
+        });
+
+        btnSalvarEdicao.addEventListener('click', (e) => {
+            e.preventDefault();
+        
+            let novaDescricao = textAreaDeEdicao.value;
+            
+            if (novaDescricao && tarefaSelecionada && liTarefaSelecionada) {
+                const paragrafo = liTarefaSelecionada.querySelector('.app__section-task-list-item-description');
+                paragrafo.textContent = novaDescricao;
+                tarefaSelecionada.descricao = novaDescricao; 
+                atualizarTarefa();    
+            }; 
+            
+            formularioDeEdicao.classList.add('hidden');           
+        });
+
+    });
 
     const imgBtn = document.createElement('img');
     imgBtn.setAttribute('src', 'imagens/edit.png');
