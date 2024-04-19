@@ -25,7 +25,7 @@
 
 <hr><br>
 
-<img src="img/fokus.png" alt="tela inicial do fokus"><br>
+<img src="imagens/fokus.png" alt="tela inicial do fokus"><br>
 
-<img src="img/fokus1.png" alt="tela inicial do fokus com algumas tarefas"><br>
+<img src="imagens/fokus1.png" alt="tela inicial do fokus com algumas tarefas"><br>
 
